@@ -1,0 +1,32 @@
+---
+workloads:
+  - id: dns-primary
+    guest: lab-dns01
+    node: lab-pve01
+    recovery_priority: 1
+    backup_class: critical-configuration
+  - id: dns-secondary
+    guest: lab-dns02
+    node: lab-pve02
+    recovery_priority: 1
+    backup_class: critical-configuration
+  - id: home-automation
+    guest: lab-ha01
+    node: lab-pve02
+    recovery_priority: 2
+    backup_class: critical-data
+  - id: monitoring
+    guest: lab-monitor01
+    node: lab-pve03
+    recovery_priority: 2
+    backup_class: configuration-and-dashboards
+  - id: public-origin
+    guest: lab-public01
+    node: lab-pve03
+    recovery_priority: 3
+    backup_class: application-defined
+  - id: ci-runner
+    guest: lab-ci01
+    node: lab-pve03
+    recovery_priority: 4
+    backup_class: rebuild-only

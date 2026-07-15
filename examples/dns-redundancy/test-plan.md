@@ -1,0 +1,16 @@
+# DNS redundancy test plan
+
+| Test | Expected result |
+| --- | --- |
+| Query resolver 1 over UDP/TCP | Correct filtered response |
+| Query resolver 2 over UDP/TCP | Equivalent correct response |
+| Stop resolver 1 guest | Clients resolve through resolver 2 |
+| Stop resolver 2 guest | Clients resolve through resolver 1 |
+| Block resolver 1 upstream | Health check detects functional failure |
+| Compare policy exports | No unexplained rules or rewrites differ |
+| Test IPv6-capable client | No bypass through unintended resolver |
+| Stop both resolvers | Manual router DNS fallback restores resolution |
+| Restore both resolvers | Router returns to filtered addresses after validation |
+
+Record client operating system, lease behavior, resolver addresses, timestamps, and
+evidence. Never run the full-outage test without independent router access.

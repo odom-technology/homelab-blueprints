@@ -20,3 +20,11 @@ domains, inventory, or policy.
 
 Blueprints favor explicit inputs, least privilege, predictable rollback, and clean
 removal. They are examples, not a substitute for reviewing local requirements.
+
+## First reference set
+
+The initial examples document a three-node Proxmox cluster behind an existing router,
+two independent DNS guests, guest standards, service metadata, and a Tailnet-only
+application boundary. All addresses and names are documentation values.
+
+See [open blueprint work](TODO.md) before treating any scaffold as deployment-ready.

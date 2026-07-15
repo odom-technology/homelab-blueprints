@@ -1,0 +1,27 @@
+---
+cluster:
+  name: example-cluster
+  storage_model: local-lvm-thin
+  automatic_ha: false
+  ceph: false
+network:
+  subnet: 192.0.2.0/24
+  gateway: 192.0.2.1
+  dhcp_range: 192.0.2.100-192.0.2.199
+  infrastructure_range: 192.0.2.10-192.0.2.49
+nodes:
+  - name: lab-pve01
+    address: 192.0.2.10
+    role: network-core
+    votes: 1
+  - name: lab-pve02
+    address: 192.0.2.11
+    role: trusted-home
+    votes: 1
+  - name: lab-pve03
+    address: 192.0.2.12
+    role: applications-compute
+    votes: 1
+notes:
+  - All values are documentation examples and must be replaced.
+  - Final names and addresses must exist before cluster creation.
