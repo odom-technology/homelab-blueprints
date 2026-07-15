@@ -27,4 +27,4 @@ The initial examples document a three-node Proxmox cluster behind an existing ro
 two independent DNS guests, guest standards, service metadata, and a Tailnet-only
 application boundary. All addresses and names are documentation values.
 
-See [open blueprint work](TODO.md) before treating any scaffold as deployment-ready.
+See [open blueprint issues](ISSUES.md) before treating any scaffold as deployment-ready.
