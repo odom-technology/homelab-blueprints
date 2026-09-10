@@ -17,14 +17,19 @@ workloads:
     backup_class: critical-data
   - id: monitoring
     guest: lab-monitor01
-    node: lab-pve03
+    node: lab-pve02
     recovery_priority: 2
     backup_class: configuration-and-dashboards
-  - id: public-origin
-    guest: lab-public01
+  - id: public-origin-a
+    guest: lab-public-a01
     node: lab-pve03
     recovery_priority: 3
     backup_class: application-defined
+  - id: public-origin-b
+    guest: lab-public-b01
+    node: lab-pve03
+    recovery_priority: 3
+    backup_class: application-and-database-defined
   - id: ci-runner
     guest: lab-ci01
     node: lab-pve03

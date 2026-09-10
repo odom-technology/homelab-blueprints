@@ -5,23 +5,30 @@ cluster:
   automatic_ha: false
   ceph: false
 network:
-  subnet: 192.0.2.0/24
-  gateway: 192.0.2.1
-  dhcp_range: 192.0.2.100-192.0.2.199
-  infrastructure_range: 192.0.2.10-192.0.2.49
+  trusted_subnet: 192.0.2.0/24
+  trusted_gateway: 192.0.2.1
+  trusted_dhcp_range: 192.0.2.100-192.0.2.199
+  management_subnet: 198.51.100.0/24
+  management_gateway: 198.51.100.1
+  management_dhcp: disabled
+  server_subnet: 203.0.113.0/24
+  server_gateway: 203.0.113.1
+  server_dhcp: disabled
 nodes:
   - name: lab-pve01
-    address: 192.0.2.10
+    management_address: 198.51.100.10
     role: network-core
     votes: 1
   - name: lab-pve02
-    address: 192.0.2.11
-    role: trusted-home
+    management_address: 198.51.100.11
+    role: secondary-core-and-trusted-home
     votes: 1
   - name: lab-pve03
-    address: 192.0.2.12
-    role: applications-compute
+    management_address: 198.51.100.12
+    role: public-production
     votes: 1
 notes:
   - All values are documentation examples and must be replaced.
+  - The three RFC 5737 ranges are examples, not routable production allocations.
   - Final names and addresses must exist before cluster creation.
+  - Inter-zone policy defaults to deny with exact documented exceptions.

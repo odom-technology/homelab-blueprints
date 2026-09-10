@@ -23,8 +23,9 @@ removal. They are examples, not a substitute for reviewing local requirements.
 
 ## First reference set
 
-The initial examples document a three-node Proxmox cluster behind an existing router,
-two independent DNS guests, guest standards, service metadata, and a Tailnet-only
-application boundary. All addresses and names are documentation values.
+The initial examples document a three-node Proxmox cluster behind a rack-independent,
+VLAN-aware network core, two independent DNS guests, identical exact-route service
+routers, guest standards, service metadata, and separate private/public application
+boundaries. All addresses and names are documentation values.
 
 See [open blueprint issues](ISSUES.md) before treating any scaffold as deployment-ready.
